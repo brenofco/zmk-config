@@ -42,14 +42,14 @@
 // -------------------------------------------------                  -------------------------------------------------
 // |  ESC  |  F01  |  F02  |  F03  |  F04  |  F05  |                  |  F06  |  F07  |  F08  |  F09  |  F10  | PRINT |
 // |  TAB  | PAGUP |  HOM  |  UPA  |  END  |       |                  |       |   7   |   8   |   9   |       |       |
-// | LCTRL | PAGDN | LEFTA | DOWNA | RIGHT |       |--------  --------|       |   4   |   5   |   6   |       | RCTRL |
+// | LCTRL | PAGDN | LEFTA | DOWNA | RIGHT |       |--------  --------|   =   |   4   |   5   |   6   |       | RCTRL |
 // | SHIFT |       |       |       |       |       |       |  |       |       |   1   |   2   |   3   |       | SHIFT |
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | xxxxx |  | ENTER | SPACE |   0   |  ALT  | CMENU |----------------
 //                 -----------------------------------------  -----------------------------------------  
             bindings = <
 &kp ESC &kp F1     &kp F2   &kp F3   &kp F4    &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9     &kp F10  &kp PSCRN
 &trans  &kp PG_UP  &kp HOME &kp UP   &kp END   &none                          &none     &kp KP_N7  &kp KP_N8  &kp KP_N9  &none    &none
-&trans  &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT &none                          &none     &kp KP_N4  &kp KP_N5  &kp KP_N6  &none    &kp RCTRL
+&trans  &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT &none                          &kp EQUAL &kp KP_N4  &kp KP_N5  &kp KP_N6  &none    &kp RCTRL
 &trans  &none      &none    &none    &none     &none    &none      &none      &none     &kp KP_N1  &kp KP_N2  &kp KP_N3  &none    &trans
                    &trans   &trans   &trans    &trans   &trans     &kp ENTER  &trans    &kp KP_N0  &kp RALT   &trans
             >;
