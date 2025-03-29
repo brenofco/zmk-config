@@ -62,15 +62,15 @@
 // |  ESC  |  F11  |  F12  |  F13  |  F14  |  F15  |                  |  F16  |  F17  |  F18  |  F19  |  F20  | PRINT |
 // |  TAB  |       |   (   |   \   |   [   | LBRKT |                  |       | SCRLK |       |       |       |       |
 // | LCTRL |       |   )   |   |   |   ]   | RBRKT |--------  --------|       |  INS  |       |       |       | RCTRL |
-// | SHIFT |       |       |       |       |       |       |  |       |       |       |       |       |       | SHIFT |
+// | SHIFT |       |       |       |       |       |       |  |       |       | NUMLK |       |       |       | SHIFT |
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | ENTER |  | xxxxx | SPACE | ALTGR |       | CMENU |----------------
 //                 -----------------------------------------  ----------------------------------------- insert scroll 
             bindings = <
-&kp ESC &kp F11    &kp F12     &kp F13   &kp F14   &kp F15                     &kp F16  &kp F17   &kp F18  &kp F19  &kp F20  &kp PSCRN
-&trans  &none      &kp KP_LPAR &kp NUBS  &kp RBKT  &none                       &none    &kp SLCK  &none    &none    &none    &none
-&trans  &none      &kp KP_RPAR &kp PIPE2 &kp BSLH  &none                       &none    &kp INS   &none    &none    &none    &kp RCTRL
-&trans  &none      &none       &none     &none     &none    &none      &none   &none    &none     &none    &none    &none    &trans
-                   &trans      &trans    &trans    &trans   &kp ENTER  &trans  &trans   &trans    &none    &trans
+&kp ESC &kp F11    &kp F12     &kp F13   &kp F14   &kp F15                     &kp F16  &kp F17         &kp F18  &kp F19  &kp F20  &kp PSCRN
+&trans  &none      &kp KP_LPAR &kp NUBS  &kp RBKT  &none                       &none    &kp SLCK        &none    &none    &none    &none
+&trans  &none      &kp KP_RPAR &kp PIPE2 &kp BSLH  &none                       &none    &kp INS         &none    &none    &none    &kp RCTRL
+&trans  &none      &none       &none     &none     &none    &none      &none   &none    &kp KP_NUMLOCK  &none    &none    &none    &trans
+                   &trans      &trans    &trans    &trans   &kp ENTER  &trans  &trans   &trans          &none    &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
