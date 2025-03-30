@@ -24,17 +24,17 @@
 // | GRAVE |   1   |   2   |   3   |   4   |   5   |                  |   6   |   7   |   8   |   9   |   0   | MINUS |
 // |  TAB  |   Q   |   W   |   E   |   R   |   T   |                  |   Y   |   U   |   I   |   O   |   P   | LBRCT |
 // | LCTRL |   A   |   S   |   D   |   F   |   G   |--------  --------|   H   |   J   |   K   |   L   |   ;   |   '   |
-// | SHIFT |   Z   |   X   |   C   |   V   |   B   | CAPS3 |  | CAPS3 |   N   |   M   |   ,   |   .   |   /   | SHIFT |
+// | SHIFT |   Z   |   X   |   C   |   V   |   B   | CAPS3 |  | RSTZ3 |   N   |   M   |   ,   |   .   |   /   | SHIFT |
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | LOWER |  | RAISE | SPACE | ALTGR | RCTRL | CMENU |----------------
 //                 -----------------------------------------  -----------------------------------------
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
 &kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y     &kp U     &kp I     &kp O    &kp P    &kp LBKT
 &kp LCTRL &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &lt 3 CLCK &lt 3 CLCK &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &lt 3 CLCK &lt 3 LC(N0) &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
                  &kp LGUI &kp LALT &kp DEL   &kp BSPC   &mo LOWER  &mo RAISE  &kp SPACE &kp RALT  &kp RCTRL &kp K_CMENU
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DEC C_BRI_INC>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         lower_layer {
