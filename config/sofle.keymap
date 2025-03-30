@@ -15,7 +15,7 @@
 #define RAISE 2
 #define ADJUST 3
 
-/ {
+/ {    
     keymap {
         compatible = "zmk,keymap";
         default_layer {
@@ -28,11 +28,11 @@
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | LOWER |  | RAISE | SPACE | ALTGR | RCTRL | CMENU |----------------
 //                 -----------------------------------------  -----------------------------------------
             bindings = <
-&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
-&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y     &kp U     &kp I     &kp O    &kp P    &kp LBKT
-&kp LCTRL &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                             &kp N6    &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                              &kp Y     &kp U     &kp I     &kp O    &kp P    &kp LBKT
+&kp LCTRL &kp A  &kp S    &kp D    &kp F     &kp G                              &kp H     &kp J     &kp K     &kp L    &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &lt 3 CLCK &lt 3 LC(N0) &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp DEL   &kp BSPC   &mo LOWER  &mo RAISE  &kp SPACE &kp RALT  &kp RCTRL &kp K_CMENU
+                 &kp LGUI &kp LALT &kp DEL   &kp BSPC   &mo LOWER  &mo RAISE    &kp SPACE &kp RALT  &kp RCTRL &kp K_CMENU
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
@@ -41,17 +41,17 @@
             display-name = "lower";
 // -------------------------------------------------                  -------------------------------------------------
 // |  ESC  |  F01  |  F02  |  F03  |  F04  |  F05  |                  |  F06  |  F07  |  F08  |  F09  |  F10  | PRINT |
-// |  TAB  | PAGUP |  HOM  |  UPA  |  END  |       |                  |       |   7   |   8   |   9   |       |       |
+// |  TAB  | PAGUP |  HOM  |  UPA  |  END  |       |                  |   +   |   7   |   8   |   9   |       |       |
 // | LCTRL | PAGDN | LEFTA | DOWNA | RIGHT |       |--------  --------|   =   |   4   |   5   |   6   |       | RCTRL |
-// | SHIFT |       |       |       |       |       |       |  |       |       |   1   |   2   |   3   |       | SHIFT |
+// | SHIFT |       | PRVWD |       | NXTWD |       |       |  |       |   -   |   1   |   2   |   3   |       | SHIFT |
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | xxxxx |  | ENTER | SPACE |   0   |  ALT  | CMENU |----------------
 //                 -----------------------------------------  -----------------------------------------  
             bindings = <
-&kp ESC &kp F1     &kp F2   &kp F3   &kp F4    &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9     &kp F10  &kp PSCRN
-&trans  &kp PG_UP  &kp HOME &kp UP   &kp END   &none                          &none     &kp KP_N7  &kp KP_N8  &kp KP_N9  &none    &none
-&trans  &kp PG_DN  &kp LEFT &kp DOWN &kp RIGHT &none                          &kp EQUAL &kp KP_N4  &kp KP_N5  &kp KP_N6  &none    &kp RCTRL
-&trans  &none      &none    &none    &none     &none    &none      &none      &none     &kp KP_N1  &kp KP_N2  &kp KP_N3  &none    &trans
-                   &trans   &trans   &trans    &trans   &trans     &kp ENTER  &trans    &kp KP_N0  &kp RALT   &trans
+&kp ESC &kp F1     &kp F2     &kp F3   &kp F4        &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9     &kp F10  &kp PSCRN
+&trans  &kp PG_UP  &kp HOME   &kp UP   &kp END       &none                          &kp PLUS  &kp KP_N7  &kp KP_N8  &kp KP_N9  &none    &none
+&trans  &kp PG_DN  &kp LEFT   &kp DOWN &kp RIGHT     &none                          &kp EQUAL &kp KP_N4  &kp KP_N5  &kp KP_N6  &none    &kp RCTRL
+&trans  &none      &kp(LEFT)  &none    &kp LC(RIGHT) &none    &none      &none      &kp MINUS &kp KP_N1  &kp KP_N2  &kp KP_N3  &none    &trans
+                   &trans     &trans   &trans        &trans   &trans     &kp ENTER  &trans    &kp KP_N0  &kp RALT   &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DEC C_BRI_INC>;
         };
@@ -60,15 +60,15 @@
             display-name = "raise";
 // -------------------------------------------------                  -------------------------------------------------
 // |  ESC  |  F11  |  F12  |  F13  |  F14  |  F15  |                  |  F16  |  F17  |  F18  |  F19  |  F20  | PRINT |
-// |  TAB  |       |   (   |   \   |   [   | LBRKT |                  |       | SCRLK |       |       |       |       |
-// | LCTRL |       |   )   |   |   |   ]   | RBRKT |--------  --------|       |  INS  |       |       |       | RCTRL |
+// |  TAB  |       |   (   |   \   |   [   | LBRAC |                  |       | SCRLK |       |       |       |       |
+// | LCTRL |       |   )   |   |   |   ]   | RBRAC |--------  --------|       |  INS  |       |       |       | RCTRL |
 // | SHIFT |       |       |       |       |       |       |  |       |       | NUMLK |       |       |       | SHIFT |
 // ----------------| LTGUI |  ALT  |  DEL  | BKSPC | ENTER |  | xxxxx | SPACE | ALTGR |       | CMENU |----------------
 //                 -----------------------------------------  ----------------------------------------- insert scroll 
             bindings = <
 &kp ESC &kp F11    &kp F12     &kp F13   &kp F14   &kp F15                     &kp F16  &kp F17         &kp F18  &kp F19  &kp F20  &kp PSCRN
-&trans  &none      &kp KP_LPAR &kp NUBS  &kp RBKT  &none                       &none    &kp SLCK        &none    &none    &none    &none
-&trans  &none      &kp KP_RPAR &kp PIPE2 &kp BSLH  &none                       &none    &kp INS         &none    &none    &none    &kp RCTRL
+&trans  &none      &kp KP_LPAR &kp NUBS  &kp RBKT  &kp LBRC                       &none    &kp SLCK        &none    &none    &none    &none
+&trans  &none      &kp KP_RPAR &kp PIPE2 &kp BSLH  &kp RBRC                       &none    &kp INS         &none    &none    &none    &kp RCTRL
 &trans  &none      &none       &none     &none     &none    &none      &none   &none    &kp KP_NUMLOCK  &none    &none    &none    &trans
                    &trans      &trans    &trans    &trans   &kp ENTER  &trans  &trans   &trans          &none    &trans
             >;
