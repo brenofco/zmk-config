@@ -19,9 +19,17 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: sofle_left
-  - board: nice_nano_v2
-    shield: sofle_right
+  # reset settings firmware:
   - board: nice_nano_v2
     shield: settings_reset
+  # dongle firmware:
+  - board: nice_nano_v2
+    shield: sofle_keyboard_dongle
+  # left-side keyboard firmware:
+  - board: nice_nano_v2
+    shield: sofle_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  # right-side keyboard firmware:
+  - board: nice_nano_v2
+    shield: sofle_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
